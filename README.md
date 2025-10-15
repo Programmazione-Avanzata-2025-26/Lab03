@@ -1,4 +1,17 @@
-# Lab 03
+# Lab 03 - Soluzione
+
+> **💡 NOTE 💡** 
+> 
+> - Nella soluzione proposta, i concetti di "automobile" e "noleggio" sono rappresentati attraverso le classi: 
+> `Automobile` (nel file `automobile.py`) e `Noleggio` (nel file `noleggio.py`)
+> 
+> - La definizione dei metodi dunder `__str__()` e `__repr__()` serve a stabilire come un oggetto viene rappresentato 
+> in forma testuale (ad esempio quando lo si stampa).\
+> ATTENZIONE: definire `__str__()` permette di stampare direttamente l'oggetto, quindi funziona se viene 
+> eseguita un'istruzione del tipo, supponendo l'oggetto noleggio, `print(noleggio)`, ma se l'oggetto fa parte di
+> una collezione, ad esempio "lista_noleggi", l'istruzione `print(lista_noleggi)`, con la sola definizione 
+> `__str__()`, stamperebbe gli oggetti come indirizzi di memoria. Per evitare questo bisogna quindi definire il metodo `__repr__()`.
+> 
 
 #### Argomenti
 
