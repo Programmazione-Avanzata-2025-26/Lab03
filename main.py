@@ -19,14 +19,16 @@ def main():
         scelta = menu()
 
         if scelta == "1":
-            nuovo_responsabile = input("Inserisci il nuovo responsabile: ")
-            # TODO: Aggiorna responsabile nel sistema
+           nuovo_responsabile = input("Inserisci il nuovo responsabile: ")
+            autonoleggio.responsabile = nuovo_responsabile
+            print(f"Responsabile aggiornato a {nuovo_responsabile}")
 
         elif scelta == "2":
             while True:
                 try:
                     file_path = input("Inserisci il path del file da caricare: ").strip()
                     autonoleggio.carica_file_automobili(file_path)
+                    print(f"{len(autonoleggio.automobili)} automobili caricate.")
                     break
                 except Exception as e:
                     print(e)
@@ -38,7 +40,7 @@ def main():
                 anno = int(input("Anno di Immatricolazione: ").strip())
                 posti = int(input("Numero di posti: ").strip())
             except ValueError:
-                print("Errore: inserire valori numerici validi per anno, pagine e sezione.")
+                print("Errore: inserire valori numerici validi per anno di immatricolazione e posti.")
                 continue
             automobile = autonoleggio.aggiungi_automobile(marca, modello, anno, posti)
             print(f"Automobile aggiunta: {automobile}")
@@ -59,6 +61,8 @@ def main():
                 print(e)
 
         elif scelta == "6":
+            for n in autonoleggio.noleggi:
+                print(f'- {n}')
             id_noleggio = input("ID noleggio da terminare: ")
             try:
                 autonoleggio.termina_noleggio(id_noleggio)
@@ -74,3 +78,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
